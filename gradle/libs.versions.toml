@@ -1,7 +1,7 @@
 [versions]
 dotenv = "6.5.1"
 jib = "3.4.5"
-junit = "5.12.1"
+junit = "5.12.2"
 kotlin = "2.1.20"
 ktlint = "12.2.0"
 
