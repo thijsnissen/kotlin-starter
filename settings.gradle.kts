@@ -1,5 +1,5 @@
 pluginManagement {
-    includeBuild("build-logic")
+    includeBuild("gradle/conventions")
 }
 
 rootProject.name = "kotlin-starter"

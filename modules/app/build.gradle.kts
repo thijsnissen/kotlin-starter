@@ -1,6 +1,6 @@
 plugins {
-    id("buildlogic.common-conventions")
-    application
+    id("common-conventions")
+    id("application-conventions")
 }
 
 application {
