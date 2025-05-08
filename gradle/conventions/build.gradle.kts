@@ -8,6 +8,6 @@ repositories {
 
 dependencies {
     implementation(libs.jib)
-    implementation(libs.kotlin.gradle.plugin)
+    implementation(libs.kotlin)
     implementation(libs.ktlint)
 }

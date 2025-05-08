@@ -10,10 +10,11 @@ plugins {
 
 dependencies {
     implementation(versionCatalogUnsafe.findLibrary("dotenv.kotlin").get())
-    implementation(versionCatalogUnsafe.findLibrary("kotlin.logging").get())
+    implementation(versionCatalogUnsafe.findLibrary("kotlin.logging.jvm").get())
     implementation(versionCatalogUnsafe.findLibrary("kotlinx.coroutines").get())
-    runtimeOnly(versionCatalogUnsafe.findLibrary("logback.classic").get())
     implementation(versionCatalogUnsafe.findLibrary("slf4j").get())
+    runtimeOnly(versionCatalogUnsafe.findLibrary("logback.classic").get())
+    testImplementation(versionCatalogUnsafe.findLibrary("kotlinx.coroutines.test").get())
 }
 
 repositories {
@@ -36,7 +37,7 @@ kotlin {
 testing {
     suites {
         val test by getting(JvmTestSuite::class) {
-            useJUnitJupiter(versionCatalogUnsafe.findVersion("junit").get().toString())
+            useJUnitJupiter(versionCatalogUnsafe.findVersion("junit-jupiter").get().toString())
 
             targets.all {
                 testTask.configure {
@@ -45,6 +46,10 @@ testing {
             }
         }
     }
+}
+
+ktlint {
+    version.set("1.5.0")
 }
 
 val verify by tasks.registering {
