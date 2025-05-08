@@ -37,7 +37,7 @@ kotlin {
 testing {
     suites {
         val test by getting(JvmTestSuite::class) {
-            useJUnitJupiter(versionCatalogUnsafe.findVersion("junit").get().toString())
+            useJUnitJupiter(versionCatalogUnsafe.findVersion("junit-jupiter").get().toString())
 
             targets.all {
                 testTask.configure {
