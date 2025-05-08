@@ -10,10 +10,11 @@ plugins {
 
 dependencies {
     implementation(versionCatalogUnsafe.findLibrary("dotenv.kotlin").get())
-    implementation(versionCatalogUnsafe.findLibrary("kotlin.logging").get())
+    implementation(versionCatalogUnsafe.findLibrary("kotlin.logging.jvm").get())
     implementation(versionCatalogUnsafe.findLibrary("kotlinx.coroutines").get())
-    runtimeOnly(versionCatalogUnsafe.findLibrary("logback.classic").get())
     implementation(versionCatalogUnsafe.findLibrary("slf4j").get())
+    runtimeOnly(versionCatalogUnsafe.findLibrary("logback.classic").get())
+    testImplementation(versionCatalogUnsafe.findLibrary("kotlinx.coroutines.test").get())
 }
 
 repositories {
@@ -45,6 +46,10 @@ testing {
             }
         }
     }
+}
+
+ktlint {
+    version.set("1.5.0")
 }
 
 val verify by tasks.registering {

@@ -1,6 +1,6 @@
 plugins {
-    id("com.google.cloud.tools.jib")
     application
+    id("com.google.cloud.tools.jib")
 }
 
 jib {
