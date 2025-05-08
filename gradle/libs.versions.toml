@@ -5,7 +5,7 @@ junit = "5.12.2"
 kotlin = "2.1.20"
 coroutines = "1.10.2"
 ktlint = "12.2.0"
-logback = "1.4.14"
+logback = "1.5.18"
 logging = "7.0.7"
 slf4j = "2.0.17"
 
