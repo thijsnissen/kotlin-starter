@@ -23,7 +23,7 @@ abstract class DockerImageTag @Inject constructor(
     }
 
     private val gitCurrentBranch: String? by lazy {
-        "git rev-parse --abbrev-ref HEAD".exec()
+        "git rev-parse --abbrev-ref HEAD".exec()?.trim()
     }
 
     private val now: String by lazy {
@@ -44,7 +44,7 @@ abstract class DockerImageTag @Inject constructor(
             val output = ByteArrayOutputStream()
 
             execOperations.exec {
-                commandLine((split(" ").toTypedArray()))
+                commandLine(split(" "))
                 standardOutput = output
             }
 

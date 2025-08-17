@@ -10,7 +10,7 @@ plugins {
     id("com.google.cloud.tools.jib")
 }
 
-val dockerImageTagProvider = providers.of(DockerImageTag::class) { parameters.semver.set(version.toString()) }
+val dockerImageTagProvider = providers.of(DockerImageTag::class) { parameters.semver = version.toString() }
 
 jib {
     container {
