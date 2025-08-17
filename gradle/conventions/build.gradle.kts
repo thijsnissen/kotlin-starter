@@ -9,5 +9,5 @@ repositories {
 dependencies {
     implementation(libs.jib)
     implementation(libs.kotlin)
-    implementation(libs.ktlint)
+    implementation(libs.ktfmt)
 }
