@@ -5,7 +5,7 @@ junit-jupiter = "5.13.4"
 kotlin = "2.2.10"
 kotlin-logging-jvm = "7.0.12"
 kotlinx-coroutines = "1.10.2"
-ktlint = "13.0.0"
+ktfmt = "0.23.0"
 logback = "1.5.18"
 slf4j = "2.0.17"
 
@@ -22,6 +22,6 @@ slf4j = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
 # Plugins that are added in conventions plugins
 jib = { module = "com.google.cloud.tools.jib:com.google.cloud.tools.jib.gradle.plugin", version.ref = "jib" }
 kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
-ktlint = { module = "org.jlleitschuh.gradle:ktlint-gradle", version.ref = "ktlint" }
+ktfmt = { module = "com.ncorti.ktfmt.gradle:com.ncorti.ktfmt.gradle.gradle.plugin", version.ref = "ktfmt" }
 
 [plugins]

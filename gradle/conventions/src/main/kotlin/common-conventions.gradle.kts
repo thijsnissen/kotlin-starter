@@ -1,11 +1,6 @@
-group = ""
-version = "0.1.0-SNAPSHOT"
-
-description = "Directory structure and settings for starting a new Kotlin project"
-
 plugins {
     id("org.jetbrains.kotlin.jvm")
-    id("org.jlleitschuh.gradle.ktlint")
+    id("com.ncorti.ktfmt.gradle")
 }
 
 dependencies {
@@ -19,6 +14,7 @@ dependencies {
 
 repositories {
     mavenCentral()
+    mavenLocal()
 }
 
 kotlin {
@@ -29,7 +25,8 @@ kotlin {
             "-Xjsr305=strict",
             "-Werror",
             "-Wextra",
-            "-verbose"
+            "-verbose",
+            "-Xcontext-parameters",
         )
     }
 }
@@ -37,7 +34,27 @@ kotlin {
 testing {
     suites {
         val test by getting(JvmTestSuite::class) {
-            useJUnitJupiter(versionCatalogUnsafe.findVersion("junit-jupiter").get().toString())
+            useJUnitJupiter()
+        }
+
+        val integrationTest by registering(JvmTestSuite::class) {
+            sources {
+                kotlin.srcDir("src/it/kotlin")
+                resources.srcDir("src/it/resources")
+            }
+        }
+
+        val endToEndTest by registering(JvmTestSuite::class) {
+            sources {
+                kotlin.srcDir("src/e2e/kotlin")
+                resources.srcDir("src/e2e/resources")
+            }
+        }
+
+        withType<JvmTestSuite> {
+            dependencies {
+                implementation(project())
+            }
 
             targets.all {
                 testTask.configure {
@@ -48,11 +65,18 @@ testing {
     }
 }
 
-ktlint {
-    version.set("1.5.0")
+configurations.named("integrationTestImplementation") {
+    extendsFrom(configurations["testImplementation"])
+}
+configurations.named("endToEndTestImplementation") {
+    extendsFrom(configurations["integrationTestImplementation"])
 }
 
-val verify by tasks.registering {
-    dependsOn("ktlintCheck", "test")
-    description = "run formatting check and tests"
+tasks.check {
+    dependsOn("integrationTest", "endToEndTest")
 }
+
+ktfmt {
+    kotlinLangStyle()
+}
+

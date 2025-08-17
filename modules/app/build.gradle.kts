@@ -3,6 +3,4 @@ plugins {
     id("application-conventions")
 }
 
-application {
-    mainClass = "ApplicationKt"
-}
+application { mainClass = "ApplicationKt" }

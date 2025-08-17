@@ -5,15 +5,15 @@ Directory structure and settings for starting a new Kotlin project.
 Run `./gradlew wrapper --gradle-version=latest` to update the wrapper to the latest version.
 
 ## Plugins & Dependencies
-* [ktlint-gradle](https://github.com/JLLeitschuh/ktlint-gradle): `./gradlew ktlintCheck` / `./gradlew ktlintFormat`
-* [jib](https://github.com/GoogleContainerTools/jib): `./gradlew jibDockerBuild` / `./gradlew jib`
+* [ktfmt-gradle](https://github.com/cortinico/ktfmt-gradle): `./gradlew ktfmtCheck` / `./gradlew ktfmtFormat`
+* [jib](https://github.com/GoogleContainerTools/jib): `./gradlew jibDockerBuild --no-configuration-cache` / `./gradlew jib  --no-configuration-cache` (does not yet support configuration cache)
 * [junit5](https://junit.org/junit5/): `./gradlew test`
 * [dotenv-kotlin](https://github.com/cdimascio/dotenv-kotlin): automatically load `.env`
 * [kotlinx-coroutines](https://github.com/Kotlin/kotlinx.coroutines): library support for kotlin coroutines
 * [kotlin-logging](https://github.com/oshai/kotlin-logging): logging setup with [slf4j](https://github.com/qos-ch/slf4j), [logback](https://github.com/qos-ch/logback) and a custom [logback.xml](modules/app/src/main/resources/logback.xml)
 
-## Aliases
-* `verify` = `ktlintCheck,test`
+## Build & Tests
+Run `./gradlew build` to build and test the project.
 
 ## Settings for a new GitHub repository
 * license "The Unlicense"
