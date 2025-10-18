@@ -1,3 +1,5 @@
+import utils.versionCatalogUnsafe
+
 plugins {
     id("org.jetbrains.kotlin.jvm")
     id("com.ncorti.ktfmt.gradle")
@@ -7,7 +9,6 @@ dependencies {
     implementation(versionCatalogUnsafe.findLibrary("dotenv.kotlin").get())
     implementation(versionCatalogUnsafe.findLibrary("kotlin.logging.jvm").get())
     implementation(versionCatalogUnsafe.findLibrary("kotlinx.coroutines").get())
-    implementation(versionCatalogUnsafe.findLibrary("slf4j").get())
     runtimeOnly(versionCatalogUnsafe.findLibrary("logback.classic").get())
     testImplementation(versionCatalogUnsafe.findLibrary("kotlinx.coroutines.test").get())
 }
@@ -27,6 +28,7 @@ kotlin {
             "-Wextra",
             "-verbose",
             "-Xcontext-parameters",
+            "-Xcontext-sensitive-resolution"
         )
     }
 }

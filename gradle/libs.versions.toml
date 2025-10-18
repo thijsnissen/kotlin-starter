@@ -7,7 +7,6 @@ kotlin-logging-jvm = "7.0.13"
 kotlinx-coroutines = "1.10.2"
 ktfmt = "0.24.0"
 logback = "1.5.19"
-slf4j = "2.0.17"
 
 [libraries]
 dotenv-kotlin = { module = "io.github.cdimascio:dotenv-kotlin", version.ref = "dotenv-kotlin" }
@@ -17,7 +16,6 @@ kotlin-logging-jvm = { module = "io.github.oshai:kotlin-logging-jvm", version.re
 kotlinx-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx-coroutines" }
 logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
-slf4j = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
 
 # Plugins that are added in conventions plugins
 jib = { module = "com.google.cloud.tools.jib:com.google.cloud.tools.jib.gradle.plugin", version.ref = "jib" }
