@@ -2,7 +2,7 @@
 dotenv-kotlin = "6.5.1"
 jib = "3.4.5"
 junit-jupiter = "6.0.0"
-kotlin = "2.2.20"
+kotlin = "2.2.21"
 kotlin-logging-jvm = "7.0.13"
 kotlinx-coroutines = "1.10.2"
 ktfmt = "0.25.0"
