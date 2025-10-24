@@ -5,7 +5,7 @@ junit-jupiter = "6.0.0"
 kotlin = "2.2.21"
 kotlin-logging-jvm = "7.0.13"
 kotlinx-coroutines = "1.10.2"
-ktfmt = "0.24.0"
+ktfmt = "0.25.0"
 logback = "1.5.20"
 
 [libraries]
