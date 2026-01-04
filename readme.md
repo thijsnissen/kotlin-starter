@@ -31,7 +31,7 @@ Run `./gradlew build` to build and test the project.
     * require status checks to pass before merging (add `kotlin-build.yml` GitHub Actions workflow)
     * require branches to be up-to-date
 * settings / actions / general
-  * allow gitHub actions to create and approve pull requests (for `auto-approve-merge` GitHub Actions workflow)
+  * allow GitHub actions to create and approve pull requests (for `auto-approve-merge` GitHub Actions workflow)
 
 ## GitHub Actions
 * workflow `kotlin-build.yml` automatically checks for formatting and passing of all tests
