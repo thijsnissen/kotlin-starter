@@ -1,10 +1,6 @@
 import utils.DockerImageTag
 import utils.versionCatalogUnsafe
 
-group = ""
-
-description = "Directory structure and settings for starting a new Kotlin project"
-
 version = versionCatalogUnsafe.findVersion("semver").get()
 
 plugins {
@@ -31,8 +27,7 @@ jib {
                 architecture = "arm64"
             }
         }
-        image =
-            "gcr.io/distroless/java25:nonroot@sha256:fa9bfc14924fa3b43d43944d93887155d19843b3aa45610b659496f928fe2a9c"
+        image = "gcr.io/distroless/java25:nonroot@sha256:fa9bfc14924fa3b43d43944d93887155d19843b3aa45610b659496f928fe2a9c"
     }
     to {
         image = rootProject.name
