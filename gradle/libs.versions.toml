@@ -1,7 +1,7 @@
 [versions]
 semver = "0.1.0-SNAPSHOT"
 dotenv-kotlin = "6.5.1"
-jib = "3.5.2"
+jib = "3.5.3"
 junit-jupiter = "6.0.2"
 kotlin = "2.3.10"
 kotlin-logging-jvm = "7.0.14"
