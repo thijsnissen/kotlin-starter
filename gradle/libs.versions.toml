@@ -7,7 +7,7 @@ kotlin = "2.3.10"
 kotlin-logging-jvm = "7.0.14"
 kotlinx-coroutines = "1.10.2"
 ktfmt = "0.25.0"
-logback = "1.5.27"
+logback = "1.5.28"
 
 [libraries]
 dotenv-kotlin = { module = "io.github.cdimascio:dotenv-kotlin", version.ref = "dotenv-kotlin" }
